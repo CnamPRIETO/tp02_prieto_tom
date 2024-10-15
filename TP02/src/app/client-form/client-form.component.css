@@ -1,0 +1,32 @@
+form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+h2 {
+    margin-top: 1rem;
+}
+  
+p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+  
+strong {
+    color: #333;
+}
+
+.recap {
+    background: #f9f9f9;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-left: 4px solid #007BFF;
+    border-radius: 4px;
+    margin : 0 auto;
+}
+  
+recap p {
+    margin: 0.2rem 0;
+}
