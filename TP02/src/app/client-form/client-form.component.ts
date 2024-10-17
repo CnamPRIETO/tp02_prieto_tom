@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class ClientFormComponent {
   clientForm: FormGroup;
   submitted = false;
+  correct = false;
+  formDataCopy: any; 
 
   constructor(private fb: FormBuilder) {
     this.clientForm = this.fb.group({
@@ -31,17 +33,22 @@ export class ClientFormComponent {
   }
 
   onSubmit() {
-    
+    this.submitted = true;
+
     if (this.clientForm.valid) {
-      this.submitted = true;
-      console.log('Form submitted successfully', this.clientForm.value);
-      // Vous pouvez ici traiter les données du formulaire ou les afficher
+      this.correct = true;
+      this.formDataCopy = this.clientForm.value;
+
+      this.clientForm.reset();
+
+      console.log('Form submitted successfully', this.formDataCopy);
     } else {
+      this.correct = false;
       console.log('Form is invalid');
-      this.submitted = true;
-    }  }
+    }
+  }
 
   get formData() {
-    return this.clientForm.value;
+    return this.formDataCopy;
   }
 }
